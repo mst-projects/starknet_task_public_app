@@ -1,0 +1,401 @@
+[
+    {
+        "members": [
+            {
+                "name": "task_creator",
+                "offset": 0,
+                "type": "felt"
+            },
+            {
+                "name": "task_hash",
+                "offset": 1,
+                "type": "felt"
+            },
+            {
+                "name": "field",
+                "offset": 2,
+                "type": "felt"
+            },
+            {
+                "name": "reward",
+                "offset": 3,
+                "type": "Uint256"
+            },
+            {
+                "name": "start_at",
+                "offset": 5,
+                "type": "felt"
+            },
+            {
+                "name": "end_at",
+                "offset": 6,
+                "type": "felt"
+            },
+            {
+                "name": "is_approved",
+                "offset": 7,
+                "type": "felt"
+            }
+        ],
+        "name": "Task",
+        "size": 8,
+        "type": "struct"
+    },
+    {
+        "members": [
+            {
+                "name": "low",
+                "offset": 0,
+                "type": "felt"
+            },
+            {
+                "name": "high",
+                "offset": 1,
+                "type": "felt"
+            }
+        ],
+        "name": "Uint256",
+        "size": 2,
+        "type": "struct"
+    },
+    {
+        "members": [
+            {
+                "name": "task_id",
+                "offset": 0,
+                "type": "felt"
+            },
+            {
+                "name": "worker",
+                "offset": 1,
+                "type": "felt"
+            },
+            {
+                "name": "work_hash",
+                "offset": 2,
+                "type": "felt"
+            }
+        ],
+        "name": "Work",
+        "size": 3,
+        "type": "struct"
+    },
+    {
+        "inputs": [],
+        "name": "get_owner",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "task_id",
+                "type": "felt"
+            }
+        ],
+        "name": "get_task",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "Task"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "work_id",
+                "type": "felt"
+            }
+        ],
+        "name": "get_work",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "Work"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "task_id",
+                "type": "felt"
+            },
+            {
+                "name": "voter",
+                "type": "felt"
+            }
+        ],
+        "name": "get_is_voter_registered",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "work_id",
+                "type": "felt"
+            },
+            {
+                "name": "voter",
+                "type": "felt"
+            }
+        ],
+        "name": "get_has_voted",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "task_id",
+                "type": "felt"
+            }
+        ],
+        "name": "get_num_voters",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_num_tasks",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_num_works",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "work_id",
+                "type": "felt"
+            },
+            {
+                "name": "answer",
+                "type": "felt"
+            }
+        ],
+        "name": "get_vote_result",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "owner_address",
+                "type": "felt"
+            }
+        ],
+        "name": "constructor",
+        "outputs": [],
+        "type": "constructor"
+    },
+    {
+        "inputs": [
+            {
+                "name": "task_hash",
+                "type": "felt"
+            },
+            {
+                "name": "field",
+                "type": "felt"
+            },
+            {
+                "name": "reward",
+                "type": "Uint256"
+            },
+            {
+                "name": "end_at",
+                "type": "felt"
+            },
+            {
+                "name": "first_voter",
+                "type": "felt"
+            },
+            {
+                "name": "second_voter",
+                "type": "felt"
+            },
+            {
+                "name": "third_voter",
+                "type": "felt"
+            },
+            {
+                "name": "new_num_voters",
+                "type": "felt"
+            }
+        ],
+        "name": "launch_task",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "task_id",
+                "type": "felt"
+            },
+            {
+                "name": "work_hash",
+                "type": "felt"
+            }
+        ],
+        "name": "submit_work",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "task_id",
+                "type": "felt"
+            },
+            {
+                "name": "work_id",
+                "type": "felt"
+            },
+            {
+                "name": "answer",
+                "type": "felt"
+            }
+        ],
+        "name": "vote",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "work_id",
+                "type": "felt"
+            }
+        ],
+        "name": "withdrawReward",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "contract_address",
+                "type": "felt"
+            },
+            {
+                "name": "spender",
+                "type": "felt"
+            },
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "name": "call_approve",
+        "outputs": [
+            {
+                "name": "success",
+                "type": "felt"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "contract_address",
+                "type": "felt"
+            },
+            {
+                "name": "account",
+                "type": "felt"
+            }
+        ],
+        "name": "call_balanceOf",
+        "outputs": [
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "contract_address",
+                "type": "felt"
+            },
+            {
+                "name": "sender",
+                "type": "felt"
+            },
+            {
+                "name": "recipient",
+                "type": "felt"
+            },
+            {
+                "name": "amount",
+                "type": "Uint256"
+            }
+        ],
+        "name": "call_transferFrom",
+        "outputs": [
+            {
+                "name": "success",
+                "type": "felt"
+            }
+        ],
+        "type": "function"
+    }
+]
